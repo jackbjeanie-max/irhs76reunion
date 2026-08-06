@@ -38,7 +38,7 @@ footer{background:var(--deep);color:white;text-align:center;padding:1.8rem;borde
 </head>
 <body>
 <nav><div class="navin"><div class="brand">IRHS <span>CLASS OF 1976</span></div><div class="links">
-<a href="#home">Home</a><a href="#details">Event Details</a>
+<a href="#home">Home</a><a href="event-details.html">Event Details</a>
 <a href="https://www.tickettailor.com/events/irhsclassof7650threunionllc/2187399" target="_blank" rel="noopener">Tickets</a>
 <a href="#memories">Memories</a><a href="#memorials">In Memory</a><a href="#sponsors">Sponsors</a><a href="#contact">Contact</a>
 </div></div></nav>
@@ -67,8 +67,8 @@ footer{background:var(--deep);color:white;text-align:center;padding:1.8rem;borde
 
 <main>
 <section id="details" class="cards">
-<div class="card"><div>🕒</div><h3>Evening Schedule</h3><p>Check-in begins at 6:30 p.m., followed by dinner, music, announcements, door prizes, and time to reconnect.</p><a class="small" href="#contact">See Schedule</a></div>
-<div class="card"><div>🏨</div><h3>Hotel Information</h3><p>Delta Marriott Greenbrier, 725 Woodlake Drive, Chesapeake, Virginia.</p><a class="small" href="#contact">Hotel Details</a></div>
+<div class="card"><div>🕒</div><h3>Evening Schedule</h3><p>Check-in begins at 6:30 p.m., followed by dinner, music, announcements, door prizes, and time to reconnect.</p><a class="small" href="event-details.html#schedule">See Schedule</a></div>
+<div class="card"><div>🏨</div><h3>Hotel Information</h3><p>Delta Marriott Greenbrier, 725 Woodlake Drive, Chesapeake, Virginia.</p><a class="small" href="event-details.html#hotel">Hotel Details</a></div>
 <div class="card"><div>🎵</div><h3>Live Entertainment</h3><p>Hotcakes will bring the music and good times throughout the evening.</p><a class="small" href="#contact">Meet Hotcakes</a></div>
 <div class="card" id="memories"><div>📷</div><h3>Share Your Memories</h3><p>Help us build a collection of school memories, earlier reunion photos, and class pictures.</p><a class="small" href="#contact">Share Photos</a></div>
 <div class="card" id="memorials"><div>🕯️</div><h3>In Memory</h3><p>A respectful place to remember classmates who are no longer with us but never forgotten.</p><a class="small" href="#contact">View Memorial</a></div>
@@ -93,14 +93,7 @@ footer{background:var(--deep);color:white;text-align:center;padding:1.8rem;borde
 function updateCountdown(){
  const eventDate=new Date("2026-10-17T18:30:00-04:00");
  const now=new Date();
- const days = Math.max(
-  0,
-  Math.round(
-    (Date.UTC(2026, 9, 17) -
-      Date.UTC(now.getFullYear(), now.getMonth(), now.getDate())) /
-      86400000
-  )
-);
+ const days=Math.max(0,Math.ceil((eventDate-now)/86400000));
  document.getElementById("days").textContent=days;
 }
 updateCountdown();
