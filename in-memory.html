@@ -30,6 +30,12 @@ p{font-size:1rem}
 .small{font-size:.9rem;color:#60758a}
 footer{background:var(--deep);color:white;text-align:center;padding:1.35rem;border-top:4px solid var(--blue);margin-top:3rem}
 @media(max-width:850px){.navin{flex-direction:column;padding:.55rem 0}.links{justify-content:center;gap:.8rem 1rem}.page{padding:1.8rem 1.2rem}}
+
+.email-tools{margin-top:1rem;text-align:center}
+.email-address-box{display:inline-block;background:#f5f9fc;border:1px solid #d7e7f3;border-radius:8px;padding:.55rem .8rem;margin:.45rem 0;font-weight:800;color:#062b58;word-break:break-word}
+.copy-btn{display:inline-block;background:#69ace2;color:#031a36;border:0;border-radius:7px;padding:.6rem .9rem;font-weight:800;cursor:pointer;margin:.35rem}
+.copy-note{font-size:.88rem;color:#60758a;margin-top:.35rem}
+
 </style>
 </head>
 <body>
@@ -42,7 +48,7 @@ footer{background:var(--deep);color:white;text-align:center;padding:1.35rem;bord
 <a href="memories.html">Memories</a>
 <a href="in-memory.html">In Memory</a>
 <a href="sponsors.html">Sponsors</a>
-<a href="mailto:irhs1976.50th@gmail.com?subject=IRHS%20Class%20of%201976%20Reunion%20Question">Contact</a>
+<a href="contact.html">Contact</a>
 </div></div></nav>
 <main>
 <section class="page">
@@ -73,6 +79,12 @@ If you submit a personal or family photograph, please confirm that you have perm
 
 <div class="btns">
 <a class="btn" href="mailto:irhs1976.50th@gmail.com?subject=IRHS%20In%20Memory%20Submission&body=Hello%20Reunion%20Committee%2C%0A%0AI%20would%20like%20to%20submit%20information%20for%20the%20In%20Memory%20section%20honoring%20a%20member%20of%20the%20IRHS%20Class%20of%201976.%0A%0AClassmate%27s%20full%20name%3A%0APlease%20confirm%20they%20were%20a%20member%20of%20the%20IRHS%20Class%20of%201976%3A%0AObituary%20or%20funeral-home%20link%3A%0A%0AOptional%20short%20remembrance%3A%0A%0A%0AOptional%20photo%20attached%3A%0A%5B%20%5D%20Yes%0A%5B%20%5D%20No%0A%0AIf%20I%20attach%20a%20personal%20or%20family%20photograph%2C%20I%20confirm%20that%20I%20have%20permission%20to%20share%20it%20for%20inclusion%20on%20the%20reunion%20website.%0A%0AThank%20you.">Submit In Memory Information</a>
+<div class="email-tools">
+<div class="email-address-box">irhs1976.50th@gmail.com</div><br>
+<button class="copy-btn" type="button" onclick="copyReunionEmail(this)">Copy Email Address</button>
+<div class="copy-note">If you are viewing the website inside Facebook and the email app does not open, copy the address above and use your regular email app. The requested information is listed on this page.</div>
+</div>
+
 <a class="btn light" href="index.html">Return Home</a>
 </div>
 
@@ -80,5 +92,32 @@ If you submit a personal or family photograph, please confirm that you have perm
 </section>
 </main>
 <footer>IRHS Class of 1976 50th Reunion • October 17, 2026 • Once a Brave, Always a Brave.</footer>
+
+<script>
+function copyReunionEmail(button){
+  const email = "irhs1976.50th@gmail.com";
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(email).then(function(){
+      const old = button.textContent;
+      button.textContent = "Email Copied!";
+      setTimeout(function(){ button.textContent = old; },1800);
+    }).catch(function(){ fallbackCopyEmail(button,email); });
+  } else {
+    fallbackCopyEmail(button,email);
+  }
+}
+function fallbackCopyEmail(button,email){
+  const area = document.createElement("textarea");
+  area.value = email;
+  area.style.position = "fixed";
+  area.style.opacity = "0";
+  document.body.appendChild(area);
+  area.focus(); area.select();
+  try { document.execCommand("copy"); button.textContent = "Email Copied!"; }
+  catch(e) { button.textContent = "Copy: " + email; }
+  document.body.removeChild(area);
+}
+</script>
+
 </body>
 </html>

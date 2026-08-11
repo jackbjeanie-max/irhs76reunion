@@ -33,6 +33,12 @@ footer{background:var(--deep);color:white;text-align:center;padding:1.35rem;bord
 .sponsor-card p{font-size:.95rem;margin:.25rem 0}
 .reasons{background:#e8f4fd;border-left:4px solid var(--blue);border-radius:8px;padding:1rem 1.1rem;margin:1.2rem 0}
 @media(max-width:850px){.sponsor-grid{grid-template-columns:1fr}}
+
+.email-tools{margin-top:1rem;text-align:center}
+.email-address-box{display:inline-block;background:#f5f9fc;border:1px solid #d7e7f3;border-radius:8px;padding:.55rem .8rem;margin:.45rem 0;font-weight:800;color:#062b58;word-break:break-word}
+.copy-btn{display:inline-block;background:#69ace2;color:#031a36;border:0;border-radius:7px;padding:.6rem .9rem;font-weight:800;cursor:pointer;margin:.35rem}
+.copy-note{font-size:.88rem;color:#60758a;margin-top:.35rem}
+
 </style>
 </head>
 <body>
@@ -45,7 +51,7 @@ footer{background:var(--deep);color:white;text-align:center;padding:1.35rem;bord
 <a href="memories.html">Memories</a>
 <a href="in-memory.html">In Memory</a>
 <a href="sponsors.html">Sponsors</a>
-<a href="mailto:irhs1976.50th@gmail.com?subject=IRHS%20Class%20of%201976%20Reunion%20Question">Contact</a>
+<a href="contact.html">Contact</a>
 </div></div></nav>
 <main>
 <section class="page">
@@ -76,6 +82,12 @@ Memo: <strong>IRHS Reunion Support – Your Name</strong></p>
 
 <div class="btns">
 <a class="btn" href="mailto:irhs1976.50th@gmail.com?subject=IRHS%2050th%20Reunion%20Sponsorship%20or%20Door%20Prize&body=Hello%20Reunion%20Committee%2C%0A%0AI%20am%20interested%20in%20supporting%20the%20IRHS%20Class%20of%201976%2050th%20Reunion.%0A%0AName%3A%0AClass%20year%2C%20if%20applicable%3A%0ABusiness/organization%2C%20if%20applicable%3A%0ABest%20phone%20number%3A%0A%0AI%20am%20interested%20in%3A%0A%5B%20%5D%20Sponsorship%0A%5B%20%5D%20Door%20prize%20contribution%0A%5B%20%5D%20Other%20reunion%20support%0A%0APlease%20tell%20us%20a%20little%20about%20your%20sponsorship%2C%20door%20prize%2C%20or%20other%20support%3A%0A%0A%0AThank%20you.">Contact Us About Sponsorship or Door Prizes</a>
+<div class="email-tools">
+<div class="email-address-box">irhs1976.50th@gmail.com</div><br>
+<button class="copy-btn" type="button" onclick="copyReunionEmail(this)">Copy Email Address</button>
+<div class="copy-note">If you are viewing the website inside Facebook and the email app does not open, copy the address above and use your regular email app. The requested information is listed on this page.</div>
+</div>
+
 </div>
 
 <div class="permission">
@@ -91,5 +103,32 @@ Contributions and sponsorships help support the IRHS Class of 1976 50th Reunion 
 </section>
 </main>
 <footer>IRHS Class of 1976 50th Reunion • October 17, 2026 • Once a Brave, Always a Brave.</footer>
+
+<script>
+function copyReunionEmail(button){
+  const email = "irhs1976.50th@gmail.com";
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(email).then(function(){
+      const old = button.textContent;
+      button.textContent = "Email Copied!";
+      setTimeout(function(){ button.textContent = old; },1800);
+    }).catch(function(){ fallbackCopyEmail(button,email); });
+  } else {
+    fallbackCopyEmail(button,email);
+  }
+}
+function fallbackCopyEmail(button,email){
+  const area = document.createElement("textarea");
+  area.value = email;
+  area.style.position = "fixed";
+  area.style.opacity = "0";
+  document.body.appendChild(area);
+  area.focus(); area.select();
+  try { document.execCommand("copy"); button.textContent = "Email Copied!"; }
+  catch(e) { button.textContent = "Copy: " + email; }
+  document.body.removeChild(area);
+}
+</script>
+
 </body>
 </html>
