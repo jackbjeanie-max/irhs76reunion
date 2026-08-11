@@ -14,18 +14,22 @@ nav{background:rgba(3,26,54,.98);border-bottom:3px solid var(--blue);box-shadow:
 .navin{width:min(1180px,94%);margin:auto;min-height:50px;display:flex;align-items:center;justify-content:space-between;gap:1.25rem}
 .brand{color:white;font-weight:800;letter-spacing:.04em;font-size:.95rem}.brand span{color:var(--blue)}
 .links{display:flex;flex-wrap:wrap;gap:1.35rem}.links a{color:white;font-weight:700;font-size:.86rem;padding:.28rem .05rem;border-bottom:2px solid transparent;transition:.2s ease}.links a:hover{color:var(--blue);border-bottom-color:var(--blue)}
-main{width:min(860px,88%);margin:4rem auto}
-.coming{background:white;border-radius:14px;border-top:4px solid var(--blue);box-shadow:var(--shadow);padding:2.5rem 2rem;text-align:center}
-.icon{font-size:3.4rem;margin-bottom:.25rem}
-h1{color:var(--navy);font:700 clamp(2.2rem,6vw,3.6rem) Georgia,serif;margin:.25rem 0}
-.subtitle{color:#4f84b3;font-size:1.08rem;font-weight:800;margin:.45rem 0 1.25rem}
-p{font-size:1.02rem;margin:.55rem auto;max-width:690px}
-.note{margin:1.6rem auto 0;background:#e8f4fd;border-left:4px solid var(--blue);border-radius:8px;padding:.9rem 1.05rem;max-width:670px}
+main{width:min(900px,90%);margin:3.5rem auto}
+.page{background:white;border-radius:14px;border-top:4px solid var(--blue);box-shadow:var(--shadow);padding:2.3rem 2rem}
+.icon{font-size:3.2rem;text-align:center}
+h1{color:var(--navy);font:700 clamp(2.2rem,6vw,3.6rem) Georgia,serif;text-align:center;margin:.25rem 0}
+.subtitle{text-align:center;color:#4f84b3;font-size:1.08rem;font-weight:800;margin:.45rem 0 1.5rem}
+h2{color:var(--navy);font:700 1.45rem Georgia,serif;margin-top:1.8rem}
+p{font-size:1rem}
+.instructions{background:var(--soft);border-radius:10px;padding:1rem 1.15rem;margin:1rem 0}
+.instructions ul{margin:.5rem 0 .2rem 1.1rem;padding:0}
+.permission{background:#e8f4fd;border-left:4px solid var(--blue);border-radius:8px;padding:1rem 1.1rem;margin:1.2rem 0}
 .btns{display:flex;justify-content:center;flex-wrap:wrap;gap:1rem;margin-top:1.6rem}
-.btn{display:inline-block;background:var(--navy);color:white;padding:.55rem .82rem;border-radius:7px;font-weight:800;font-size:.88rem}
+.btn{display:inline-block;background:var(--navy);color:white;padding:.62rem .9rem;border-radius:7px;font-weight:800;font-size:.9rem}
 .btn.light{background:var(--blue);color:var(--deep)}
-footer{background:var(--deep);color:white;text-align:center;padding:1.35rem;border-top:4px solid var(--blue)}
-@media(max-width:850px){.navin{flex-direction:column;padding:.55rem 0}.links{justify-content:center;gap:.8rem 1rem}.coming{padding:2rem 1.2rem}}
+.small{font-size:.9rem;color:#60758a}
+footer{background:var(--deep);color:white;text-align:center;padding:1.35rem;border-top:4px solid var(--blue);margin-top:3rem}
+@media(max-width:850px){.navin{flex-direction:column;padding:.55rem 0}.links{justify-content:center;gap:.8rem 1rem}.page{padding:1.8rem 1.2rem}}
 </style>
 </head>
 <body>
@@ -41,16 +45,36 @@ footer{background:var(--deep);color:white;text-align:center;padding:1.35rem;bord
 <a href="index.html#contact">Contact</a>
 </div></div></nav>
 <main>
-<section class="coming">
+<section class="page">
 <div class="icon">📸</div>
 <h1>Share Your Memories</h1>
-<div class="subtitle">Coming Soon</div>
-<p>We're creating a special place for the photos, stories, and memories that made our Indian River years unforgettable.</p><p>Old school photos, yearbook pictures, earlier reunion photos, and favorite class memories will be added here as we continue building the site.</p>
-<div class="note"><strong>We're still building this section.</strong><br>Check back soon for information on how to submit your photos and memories.</div>
-<div class="btns">
-<a class="btn" href="index.html">Return Home</a>
-<a class="btn light" href="event-details.html">Event Details</a>
+<div class="subtitle">Submissions Are Now Being Accepted</div>
+
+<p>We're creating a special place for the photos, stories, and memories that made our Indian River years unforgettable.</p>
+<p>If you have old school photos, yearbook pictures, earlier reunion photos, newspaper clippings, or a favorite story from your Indian River years, we'd love to hear from you.</p>
+
+<h2>What to Send</h2>
+<div class="instructions">
+<ul>
+<li>Your name and graduation year</li>
+<li>The photo or photos you would like to share</li>
+<li>The approximate year the photo was taken, if known</li>
+<li>Names of people pictured, if known</li>
+<li>A short paragraph, story, or memory to go with the photo</li>
+</ul>
 </div>
+
+<div class="permission">
+<strong>Permission to Share:</strong><br>
+By submitting photos, stories, or other material, you confirm that you own the material or have permission to share it, and you give the IRHS Class of 1976 50th Reunion Committee permission to display it on the reunion website and in reunion-related materials.
+</div>
+
+<div class="btns">
+<a class="btn" href="mailto:irhs1976.50th@gmail.com?subject=IRHS%20Reunion%20Memory%20Submission&body=Hello%20Reunion%20Committee%2C%0A%0AI%20would%20like%20to%20submit%20the%20following%20memory/photo%20for%20the%20IRHS%20Class%20of%201976%20reunion%20website.%0A%0AMy%20name%3A%0AGraduation%20year%3A%0AApproximate%20year%20of%20photo%3A%0ANames%20of%20people%20pictured%20%28if%20known%29%3A%0AMemory/story%3A%0A%0AI%20confirm%20that%20I%20own%20this%20material%20or%20have%20permission%20to%20share%20it%2C%20and%20I%20give%20the%20IRHS%20Class%20of%201976%2050th%20Reunion%20Committee%20permission%20to%20display%20it%20on%20the%20reunion%20website%20and%20reunion-related%20materials.%0A%0AThank%20you.">Email Your Photos & Memories</a>
+<a class="btn light" href="index.html">Return Home</a>
+</div>
+
+<p class="small" style="text-align:center;margin-top:1rem">You may attach photos directly to your email after the message opens.</p>
 </section>
 </main>
 <footer>IRHS Class of 1976 50th Reunion • October 17, 2026 • Once a Brave, Always a Brave.</footer>
